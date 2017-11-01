@@ -1,0 +1,15 @@
+.App {
+  margin: 16px;
+}
+
+.btn {
+    display: block;
+}
+
+.red {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}

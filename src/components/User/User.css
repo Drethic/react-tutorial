@@ -1,0 +1,6 @@
+.User {
+    width: 30%;
+    border: 1px solid #eee;
+    box-shadow:  0 2px #ccc;
+    text-align: center;
+}
