@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import UserInput from '../../User/UserInput';
+import Auxiliary from '../../../hoc/Auxiliary';
 
 class Person extends Component {
     constructor(props) {
@@ -14,6 +15,9 @@ class Person extends Component {
 
     componentDidMount() {
         console.log('[Person.js] Inside componentDidMount()');
+        if (0 === this.props.position) {
+            this.inputElement.focus();
+        }
     }
 
     componentWillUnmount() {
@@ -25,12 +29,12 @@ class Person extends Component {
     render() {
         console.log('[Person.js] Inside render()');
         return(
-            <div>
+            <Auxiliary>
                 <p onClick={this.props.clicked}>I am {this.props.name}, and I am {this.props.age}</p>
                 <p>{this.props.children}</p>
-                <UserInput change={this.props.changeName} name={this.props.name} id={this.props.id} label="Name: " />
+                <UserInput reference={(input) => {this.inputElement = input}} change={this.props.changeName} name={this.props.name} id={this.props.id} label="Name: " />
                 <UserInput change={this.props.changeAge} name={this.props.age} id={this.props.id} label="Age: " />
-            </div>
+            </Auxiliary>
         );
     }
 };
