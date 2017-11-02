@@ -334,13 +334,17 @@ class App extends PureComponent {
         return (
             <div className = "App">
                 <button onClick={() => {this.setState({showPersons: true, showTask1: true})}}>Always True</button>
-                <Cockpit appTitle = {this.props.title} />
-                <button style = {buttonStyle} key = "task1" onClick = {this.toggleTask1}>Toggle Task 1</button>
-                {task1}
-                <button style = {buttonStyle} key = "task2" onClick = {this.toggleTask2}>Toggle Task 2</button>
-                {task2}
-                <button style = {appButtonStyle} key = "mainApp" onClick = {this.toggleMainApp}>Toggle Main App</button>
-                {mainApp}
+                <Cockpit
+                    appTitle = {this.props.title}
+                    buttonStyle={buttonStyle}
+                    toggleTask1={this.toggleTask1}
+                    task1={task1}
+                    toggleTask2={this.toggleTask2}
+                    task2={task2}
+                    appButtonStyle={appButtonStyle}
+                    toggleMainApp={this.toggleMainApp}
+                    mainApp={mainApp}
+                />
             </div>
         );
     }
