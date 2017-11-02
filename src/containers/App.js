@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import Radium from 'radium';
 import './App.css';
 import UserOutput from '../components/User/UserOutput';
-import Person from '../components/Persons/Person/Person';
+import Persons from '../components/Persons/Persons';
 import {lengthVal as Length} from '../components/Validation/Validation';
 import Char from '../components/Char/Char';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
   state = {
@@ -144,18 +145,10 @@ class App extends Component {
 
     if (this.state.showPersons) {
       persons = (
-        <div>
-          {this.state.persons.map((person, key) => (
-            <Person
-              name={person.name}
-              key={person.id}
-              id={person.id}
-              age={person.age}
-              changeName={this.stateModifyPersonNameHandler.bind(this, person.id)}
-              changeAge={this.stateModifyPersonAgeHandler.bind(this, person.id)}
-            />
-          ))}
-        </div>
+        <Persons persons={this.state.persons}
+          changeName={this.stateModifyPersonNameHandler}
+          changeAge={this.stateModifyPersonAgeHandler}
+        />
       );
     }
 
@@ -233,24 +226,18 @@ class App extends Component {
       mainApp = (
         <div>
           <p className={assignedClasses.join(' ')}>This is really working!</p>
-          {this.state.appPersons.map((person, index) => (
-            <Person
-              clicked={this.deletePersonHandler.bind(this, index)}
-              name={person.name}
-              age={person.age}
-              key={person.id}
-              id={person.id}
-              changeName={this.stateModifyAppPersonNameHandler.bind(this, person.id)}
-              changeAge={this.stateModifyAppPersonAgeHandler.bind(this, person.id)}
-            />
-          ))}
+          <Persons persons={this.state.appPersons}
+            clicked={this.deletePersonHandler}
+            changeName={this.stateModifyAppPersonNameHandler}
+            changeAge={this.stateModifyAppPersonAgeHandler}
+          />
         </div>
       );
     }
 
     return (
       <div className="App">
-        <p>Welcome to Joe's React Tasks, click the buttons to see the different solutions and then some.</p>
+        <Cockpit />
         <button style={buttonStyle} key="task1" onClick={this.toggleTask1}>Toggle Task 1</button>
         {task1}
         <button style={buttonStyle} key="task2" onClick={this.toggleTask2}>Toggle Task 2</button>

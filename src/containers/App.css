@@ -1,5 +1,6 @@
 .App {
-  margin: 16px;
+  margin: 16px auto;
+  width: 60%;
 }
 
 .btn {
