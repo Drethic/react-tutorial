@@ -7,7 +7,9 @@ import Persons from '../components/Persons/Persons';
 import { lengthVal as Length } from '../components/Validation/Validation';
 import Char from '../components/Char/Char';
 import Cockpit from '../components/Cockpit/Cockpit';
+import Auxiliary from '../hoc/Auxiliary';
 import WithClass from '../hoc/WithClass';
+import withClassFunc from '../hoc/withClassFunc';
 
 // class App extends Component {
 class App extends PureComponent {
@@ -333,7 +335,8 @@ class App extends PureComponent {
         }
 
         return (
-            <WithClass classes="App">
+            //<WithClass classes="App">
+            <Auxiliary>
                 <button onClick={() => {this.setState({showPersons: true, showTask1: true})}}>Always True</button>
                 <Cockpit
                     appTitle = {this.props.title}
@@ -346,9 +349,9 @@ class App extends PureComponent {
                     toggleMainApp={this.toggleMainApp}
                     mainApp={mainApp}
                 />
-            </WithClass>
+            </Auxiliary>
         );
     }
 }
 
-export default Radium(App);
+export default withClassFunc(Radium(App), "App");
