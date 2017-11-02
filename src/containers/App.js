@@ -102,6 +102,7 @@ class App extends PureComponent {
         showTask1: false,
         showTask2: false,
         showMainApp: false,
+        toggleAppClicked: 0,
     };
 
     stateModifyHandler = (key, event) => {
@@ -143,9 +144,12 @@ class App extends PureComponent {
     };
 
     toggleMainApp = (event) => {
-        this.setState({
-            showMainApp: !this.state.showMainApp
-        });
+        this.setState((prevState, props) => (
+            {
+                showMainApp: !this.state.showMainApp,
+                toggleAppClicked: prevState.toggleAppClicked + 1
+            }
+        ));
     };
 
     stateModifyPersonNameHandler = (key, event) => {
