@@ -237,7 +237,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Cockpit />
+        <Cockpit appTitle={this.props.title} />
         <button style={buttonStyle} key="task1" onClick={this.toggleTask1}>Toggle Task 1</button>
         {task1}
         <button style={buttonStyle} key="task2" onClick={this.toggleTask2}>Toggle Task 2</button>

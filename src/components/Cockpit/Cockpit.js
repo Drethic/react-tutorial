@@ -2,7 +2,7 @@ import React from 'react';
 
 const cockpit = (props) => (
     <div>
-        <h1 key="header">React Tutorial App</h1>
+        <h1 key="header">{props.appTitle}</h1>
         <p key="main-paragraph">Welcome to Joe's React Tasks, click the buttons to see the different solutions and then some.</p>
     </div>
 );
