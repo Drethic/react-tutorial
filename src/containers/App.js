@@ -332,8 +332,8 @@ class App extends PureComponent {
             }
             mainApp = (
                 <div>
-                    <p className = {assignedClasses.join(' ')} > This is really working! </p>
-                    <Persons persons = {this.state.appPersons} clicked = {this.deletePersonHandler} changeName = {this.stateModifyAppPersonNameHandler} changeAge = {this.stateModifyAppPersonAgeHandler} />
+                    <p className={assignedClasses.join(' ')} > This is really working! </p>
+                    <Persons persons={this.state.appPersons} clicked={this.deletePersonHandler} changeName={this.stateModifyAppPersonNameHandler} changeAge={this.stateModifyAppPersonAgeHandler} />
                 </div>
             );
         }

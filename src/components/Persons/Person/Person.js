@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import UserInput from '../../User/UserInput';
 
 class Person extends Component {
@@ -33,5 +34,14 @@ class Person extends Component {
         );
     }
 };
+
+Person.propTypes = {
+    clicked: PropTypes.func,
+    name: PropTypes.string,
+    age: PropTypes.number,
+    changeName: PropTypes.func,
+    changeAge: PropTypes.func,
+    id: PropTypes.string
+}
 
 export default Person;
