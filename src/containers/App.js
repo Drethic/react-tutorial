@@ -7,6 +7,7 @@ import Persons from '../components/Persons/Persons';
 import { lengthVal as Length } from '../components/Validation/Validation';
 import Char from '../components/Char/Char';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/WithClass';
 
 // class App extends Component {
 class App extends PureComponent {
@@ -332,7 +333,7 @@ class App extends PureComponent {
         }
 
         return (
-            <div className = "App">
+            <WithClass classes="App">
                 <button onClick={() => {this.setState({showPersons: true, showTask1: true})}}>Always True</button>
                 <Cockpit
                     appTitle = {this.props.title}
@@ -345,7 +346,7 @@ class App extends PureComponent {
                     toggleMainApp={this.toggleMainApp}
                     mainApp={mainApp}
                 />
-            </div>
+            </WithClass>
         );
     }
 }
