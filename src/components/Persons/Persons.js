@@ -15,6 +15,12 @@ class Persons extends Component {
         console.log('[Persons.js] Inside componentDidMount()');
     }
 
+    componentWillUnmount() {
+        // Component is about to get removed => Perform any cleanup work here!
+        console.log('I\'m about to be removed!');
+        console.log('[Persons.js] Inside componentWillUnmount()');
+    }
+
     render() {
         console.log('[Persons.js] Inside render()');
         return (<div>
