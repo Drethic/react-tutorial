@@ -8,6 +8,19 @@ import Char from '../components/Char/Char';
 import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
+  constructor(props) {
+    super(props); //must be called since we are overriding Reacts default constructor
+    console.log('[App.js] Inside Constructor', props);
+  }
+
+  componentWillMount() {
+    console.log('[App.js] Inside componentWillMount()');
+  }
+
+  componentDidMount() {
+    console.log('[App.js] Inside componentDidMount()');
+  }
+
   state = {
     names: [
       "first",
@@ -117,6 +130,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('[App.js] Inside render()');
     let output = null, age = null, task1 = null, task2 = null, persons = null, mainApp = null;
 
     const buttonStyle = {

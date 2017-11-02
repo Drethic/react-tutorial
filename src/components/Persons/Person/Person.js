@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 import UserInput from '../../User/UserInput';
 
 class Person extends Component {
+    constructor(props) {
+        super(props); //must be called since we are overriding Reacts default constructor
+        console.log('[Person.js] Inside Constructor', props);
+    }
+
+    componentWillMount() {
+        console.log('[Person.js] Inside componentWillMount()');
+    }
+
+    componentDidMount() {
+        console.log('[Person.js] Inside componentDidMount()');
+    }
+
     render() {
+        console.log('[Person.js] Inside render()');
         return(
             <div>
                 <p onClick={this.props.clicked}>I am {this.props.name}, and I am {this.props.age}</p>

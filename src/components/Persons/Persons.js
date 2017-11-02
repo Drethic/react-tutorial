@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 import Person from './Person/Person';
 
 class Persons extends Component {
+    constructor(props) {
+        super(props); //must be called since we are overriding Reacts default constructor
+        console.log('[Persons.js] Inside Constructor', props);
+    }
+
+    componentWillMount() {
+        console.log('[Persons.js] Inside componentWillMount()');
+    }
+
+    componentDidMount() {
+        console.log('[Persons.js] Inside componentDidMount()');
+    }
+
     render() {
+        console.log('[Persons.js] Inside render()');
         return (<div>
         {this.props.persons.map((person, index) => (
             <Person
