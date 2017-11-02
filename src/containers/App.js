@@ -1,19 +1,15 @@
-import React, {
-    Component
-} from 'react';
+// import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Radium from 'radium';
 import './App.css';
 import UserOutput from '../components/User/UserOutput';
 import Persons from '../components/Persons/Persons';
-import {
-    lengthVal as Length
-} from '../components/Validation/Validation';
+import { lengthVal as Length } from '../components/Validation/Validation';
 import Char from '../components/Char/Char';
 import Cockpit from '../components/Cockpit/Cockpit';
 
-//Performance Gains with PureComponents
-
-class App extends Component {
+// class App extends Component {
+class App extends PureComponent {
     constructor(props) {
         super(props); //must be called since we are overriding Reacts default constructor
         console.log('[App.js] Inside Constructor', props);
@@ -27,13 +23,16 @@ class App extends Component {
         console.log('[App.js] Inside componentDidMount()');
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        // State driven changes
-        console.log('[UPDATE App.js] Inside shouldComponentUpdate()', nextProps, nextState);
-        // return true; //Must return a bool - false kills the update process
-        // return nextProps.persons !== this.props.persons;
-        return true;
-    }
+    // Commented out because it's covered by PureComponent
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     // State driven changes
+    //     console.log('[UPDATE App.js] Inside shouldComponentUpdate()', nextProps, nextState);
+    //     // return true; //Must return a bool - false kills the update process
+    //     // return nextProps.persons !== this.props.persons;
+    //     // return true; //Commenting out to check specific state items
+    //     return nextState.persons !== this.state.persons ||
+    //     nextState.showPersons !== this.state.showPersons;
+    // }
 
     componentWillUpdate(nextProps, nextState) {
         // State driven changes
@@ -334,6 +333,7 @@ class App extends Component {
 
         return (
             <div className = "App">
+                <button onClick={() => {this.setState({showPersons: true, showTask1: true})}}>Always True</button>
                 <Cockpit appTitle = {this.props.title} />
                 <button style = {buttonStyle} key = "task1" onClick = {this.toggleTask1}>Toggle Task 1</button>
                 {task1}

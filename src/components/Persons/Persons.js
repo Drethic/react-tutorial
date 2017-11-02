@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Person from './Person/Person';
 
-class Persons extends Component {
+// class Persons extends Component {
+class Persons extends PureComponent {
     constructor(props) {
         super(props); //must be called since we are overriding Reacts default constructor
         console.log('[Persons.js] Inside Constructor', props);
@@ -25,11 +27,13 @@ class Persons extends Component {
         console.log('[UPDATE Persons.js] Inside componentWillReceiveProps()', nextProps);
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('[UPDATE Persons.js] Inside shouldComponentUpdate()', nextProps, nextState);
-        // return true; //Must return a bool - false kills the update process
-        return nextProps.persons !== this.props.persons;
-    }
+    // Covered automatically by PureComponent
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log('[UPDATE Persons.js] Inside shouldComponentUpdate()', nextProps, nextState);
+    //     // return true; //Must return a bool - false kills the update process
+    //     return nextProps.persons !== this.props.persons;
+    //     // return true; //Overriding so that our Always True button works.
+    // }
 
     componentWillUpdate(nextProps, nextState) {
         console.log('[UPDATE Persons.js] Inside componentWillUpdate()', nextProps, nextState);
