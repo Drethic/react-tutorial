@@ -1,7 +1,7 @@
 // import React, { Component } from 'react';
 import React, { PureComponent } from 'react';
 import Radium from 'radium';
-import './App.css';
+import classes from './App.css';
 import Cockpit from '../../components/Cockpit/Cockpit';
 import Auxiliary from '../../hoc/Auxiliary';
 // import WithClass from '../../hoc/WithClass';
@@ -57,4 +57,4 @@ class App extends PureComponent {
     }
 }
 
-export default withClassFunc(Radium(App), "App");
+export default withClassFunc(Radium(App), classes.App);

@@ -1,6 +1,6 @@
 import React from 'react';
 import UserInput from './UserInput';
-import './User.css';
+import classes from './User.css';
 
 const style = {
     margin: '10px auto',
@@ -8,7 +8,7 @@ const style = {
 }
 
 const userOutput = (props) => (
-    <div style={style} className="User">
+    <div style={style} className={classes.User}>
         <p>Passed name: {props.name}</p>
         <p>This is the first paragraph.</p>
         <p>This is the second paragraph.</p>
