@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
+import classes from './MainApp.css';
 import Auxiliary from '../../hoc/Auxiliary';
 import Persons from '../../components/Persons/Persons';
 
@@ -84,10 +85,10 @@ class MainApp extends Component {
             buttonStyle[':hover'].color = 'black';
             const assignedClasses = [];
             if (this.state.appPersons.length <= 2) {
-                assignedClasses.push('red');
+                assignedClasses.push(classes.red);
             }
             if (this.state.appPersons.length <= 1) {
-                assignedClasses.push('bold');
+                assignedClasses.push(classes.bold);
             }
             mainApp = (
                 <div>
