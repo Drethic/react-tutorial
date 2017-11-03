@@ -7,6 +7,7 @@ import Auxiliary from '../../hoc/Auxiliary';
 // import WithClass from '../../hoc/WithClass';
 import withClassFunc from '../../hoc/withClassFunc';
 import Layout from '../../components/Layout/Layout';
+import BurgerBuilder from '../../containers/BurgerBuilder/BurgerBuilder';
 
 // class App extends Component {
 class App extends PureComponent {
@@ -53,7 +54,7 @@ class App extends PureComponent {
             //<WithClass classes="App">
             <Auxiliary>
                 <Cockpit appTitle = {this.props.title} />
-                <Layout><p>Test</p></Layout>
+                <Layout><BurgerBuilder /></Layout>
             </Auxiliary>
         );
     }
