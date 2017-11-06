@@ -12,6 +12,84 @@
     transition: all 0.3s ease-out;
 }
 
+.hidden {
+    display: none;
+}
+
+.modal {
+    width: auto;
+    height: auto;
+    top: 2%;
+    left: 1%;
+    position: fixed;
+    z-index: 500;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+
+.modal header {
+    padding: 18px 20px 0px 23px;
+    height: 75px;
+    background: #fff;
+    box-shadow: 0px 1px 1px black;
+}
+
+.modal header h1 {
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.8);
+}
+.modal header h2 {
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(0,0,0,0.3);
+    padding-right: 30px;
+}
+
+.modalNoh2 header {
+    height: 40px;
+}
+
+.ModalContent {
+    padding: 0 30px;
+}
+
+.Close {
+    cursor: pointer;
+}
+
+.Close:after, .Close:before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-top: 1px solid #000;
+    position: absolute;
+    top: 7px;
+    right: -8px;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.Close:before {
+    right: 6px;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.Close:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    opacity: 0.3;
+}
+
 @media (min-width: 600px) {
     .Modal {
         width: 500px;
