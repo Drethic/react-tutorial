@@ -1,20 +1,23 @@
-// import React, { Component } from 'react';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+// import React, { PureComponent } from 'react';
 import Radium from 'radium';
 import classes from './App.css';
 import Cockpit from '../../components/Cockpit/Cockpit';
-import Auxiliary from '../../hoc/Auxiliary';
-// import WithClass from '../../hoc/WithClass';
-import withClassFunc from '../../hoc/withClassFunc';
-import Layout from '../../components/Layout/Layout';
-import BurgerBuilder from '../../containers/BurgerBuilder/BurgerBuilder';
+import Auxiliary from '../../hoc/Auxiliary/Auxiliary';
+// import WithClass from '../../hoc/WithClass/WithClass';
+import withClassFunc from '../../hoc/WithClassFunc/withClassFunc';
+import Layout from '../../hoc/Layout/Layout';
+import BurgerBuilder from '../BurgerBuilder/BurgerBuilder';
+import Checkout from '../Checkout/Checkout';
+import Orders from '../Orders/Orders';
+import { Route, Switch } from 'react-router-dom';
 
-// class App extends Component {
-class App extends PureComponent {
-    constructor(props) {
-        super(props); //must be called since we are overriding Reacts default constructor
-        console.log('[App.js] Inside Constructor', props);
-    }
+class App extends Component {
+// class App extends PureComponent {
+//     constructor(props) {
+//         super(props); //must be called since we are overriding Reacts default constructor
+//         console.log('[App.js] Inside Constructor', props);
+//     }
 
     componentWillMount() {
         console.log('[App.js] Inside componentWillMount()');
@@ -53,8 +56,14 @@ class App extends PureComponent {
         return (
             //<WithClass classes="App">
             <Auxiliary>
-                <Cockpit appTitle = {this.props.title} />
-                <Layout><BurgerBuilder /></Layout>
+                <Layout>
+                    <Switch>
+                        <Route path="/checkout" component={Checkout} />
+                        <Route path="/orders" component={Orders} />
+                        <Route path="/tasks" component={Cockpit} />
+                        <Route path="/" exact component={BurgerBuilder} />
+                    </Switch>
+                </Layout>
             </Auxiliary>
         );
     }

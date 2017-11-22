@@ -43,6 +43,7 @@
     line-height: 20px;
     font-weight: bold;
     color: rgba(0,0,0,0.8);
+    padding-right: 30px;
 }
 .modal header h2 {
     font-weight: bold;
